@@ -1,8 +1,25 @@
+/*
+Esta parte do código define estilos para o corpo (body) da página.
+font-family: Define a fonte utilizada para o texto no corpo da página, sendo prioritariamente Arial e, se não disponível, uma fonte sans-serif genérica.
+background-color: Define a cor de fundo do corpo como um cinza claro (#f0f0f0).
+text-align: Centraliza o texto dentro do corpo da página.
+*/
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     text-align: center;
 }
+
+/*
+Aqui, os estilos são definidos para um elemento com a classe .container.
+background-color: Define a cor de fundo como branco (#fff).
+border-radius: Arredonda os cantos do elemento em 5 pixels.
+box-shadow: Adiciona uma sombra com um leve desfoque para dar uma aparência tridimensional ao elemento.
+padding: Adiciona um espaço interno de 20 pixels ao redor do conteúdo dentro do elemento.
+margin: Define as margens superior e inferior como 0 (ou seja, sem margens), e as laterais como auto, o que centraliza o elemento horizontalmente na página.
+max-width: Define a largura máxima do elemento como 400 pixels.
+*/
 
 .container {
     background-color: #fff;
@@ -12,6 +29,17 @@ body {
     margin: 0 auto;
     max-width: 400px;
 }
+
+/*
+Estes estilos se aplicam a todos os botões (button) na página.
+background-color: Define a cor de fundo como azul (#007bff).
+color: Define a cor do texto como branco (#fff).
+border: Remove a borda do botão.
+border-radius: Arredonda os cantos do botão em 5 pixels.
+padding: Adiciona um espaço interno de 10 pixels na parte superior e inferior, e 20 pixels nas laterais.
+cursor: Define o cursor do mouse como uma mãozinha, indicando que o botão é clicável.
+margin: Adiciona uma margem de 10 pixels ao redor do botão.
+*/
 
 button {
     background-color: #007bff;
@@ -23,10 +51,29 @@ button {
     margin: 10px;
 }
 
+/*
+Estes estilos se aplicam a rótulos (label), caixas de seleção (select) e campos de entrada (input).
+display: Define o elemento como bloco, fazendo com que fiquem em linhas separadas.
+margin: Adiciona uma margem de 10 pixels acima e abaixo dos elementos.
+*/
+
 label, select, input {
     display: block;
     margin: 10px 0;
 }
+
+/*
+Estes estilos se aplicam a listas não ordenadas (ul) e seus itens (li).
+list-style: Remove os marcadores padrão das listas.
+padding: Remove o preenchimento padrão das listas.
+Para os itens da lista (li):
+background-color: Define a cor de fundo como um cinza mais claro (#f9f9f9).
+padding: Adiciona um espaço interno de 10 pixels ao redor do conteúdo dentro do elemento.
+border-radius: Arredonda os cantos do elemento em 5 pixels.
+margin: Adiciona uma margem de 10 pixels acima e abaixo dos elementos.
+*/
+
+
 
 ul {
     list-style: none;
@@ -39,6 +86,12 @@ li {
     border-radius: 5px;
     margin: 10px 0;
 }
+
+/*
+Estes estilos se aplicam a rótulos (label) dentro de um grupo de botões de rádio (radio-group).
+display: Define o elemento como inline-block, permitindo que os rótulos fiquem na mesma linha e que seja possível adicionar margem entre eles.
+margin-right: Adiciona uma margem de 10 pixels à direita dos rótulos para criar espaçamento entre os botões de rádio.
+*/
 
 .radio-group label {
     display: inline-block;
