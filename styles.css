@@ -39,3 +39,8 @@ li {
     border-radius: 5px;
     margin: 10px 0;
 }
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 10px; /* Adicione margem para espaçamento entre os radio buttons */
+}
