@@ -22,7 +22,14 @@
             </select>
 
             <label for="multinacional">É uma Multinacional?</label>
-            <input type="checkbox" id="multinacional" name="multinacional">
+            <div class="radio-group">
+                <label>
+                    <input type="radio" id="multinacional-sim" name="multinacional" value="sim">Sim
+                </label>
+                <label>
+                    <input type="radio" id="multinacional-nao" name="multinacional" value="nao">Não
+                </label>
+            </div>
 
             <button type="submit">Enviar</button>
         </form>
