@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Empresa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Empresa</h1>
+        <form id="empresa-form">
+            <input type="text" id="nome" name="nome" placeholder="Nome da empresa" required>
+            <input type="text" id="tipo-vaga" name="tipo-vaga" placeholder="Tipo de vaga" required>
+            <div>
+                <label>Linguagens Selecionadas:</label>
+                <input type="checkbox" id="java"> Java
+                <input type="checkbox" id="python"> Python
+                <input type="checkbox" id="js"> JavaScript
+            </div>  
+
+            <div>
+                <label>É Multinacional?</label>
+                <label for="multinacional-sim">Sim</label>
+                <input type="radio" id="multinacional-sim" name="multinacional" value="Sim" required>
+                <label for="multinacional-nao">Não</label>
+                <input type="radio" id="multinacional-nao" name="multinacional" value="Não">
+            </div>      
+
+  
+            <button type="submit">Enviar</button>
+        </form>
+        <ul id="empresa-list">
+        </ul>
+        <!--<h2>Empresas Cadastradas</h2>
+        
+        <a href="empresas.html"><button>Ver Empresas</button></a>-->
+    </div>
+    <script>
+        const empresaForm = document.getElementById("empresa-form");
+        const empresaNomeInput = document.getElementById("nome"); /// 
+        const empresaTipoVagaInput = document.getElementById("tipo-vaga");
+        const lJavaInput = document.getElementById("java"); //
+        const lPythonInput = document.getElementById("python");///
+        const lJsInput = document.getElementById("js");///
+        
+        const empresaList = document.getElementById("empresa-list");
+        const multinacionalInput = document.getElementById("multinacional-sim");
+
+
+        empresaForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const empresaNome = empresaNomeInput.value;
+            const empresaTipoVaga = empresaTipoVagaInput.value; //
+            const linguagensSelecionadas = [];
+            if (lJavaInput.checked) linguagensSelecionadas.push("Java"); //
+            if (lPythonInput.checked) linguagensSelecionadas.push("Python"); // 
+            if (lJsInput.checked) linguagensSelecionadas.push("JavaScript"); //
+            const isMultinacional = document.querySelector('input[name="multinacional"]:checked').value;
+
+            /*if (companyName) {
+                // Cria um novo elemento de lista e adiciona o nome da empresa
+                const listItem = document.createElement("li");
+                listItem.textContent = companyName;
+                companyList.appendChild(listItem);
+
+                // Limpa o campo de entrada
+                companyNameInput.value = "";
+
+                // Armazena a empresa no localStorage
+                const companies = JSON.parse(localStorage.getItem("companies")) || [];
+                companies.push(companyName);
+                localStorage.setItem("companies", JSON.stringify(companies));
+            }*/
+
+            
+             // Cria um objeto que representa a empresa
+                const dadosEmpresa = {
+                    nome: empresaNome,
+                    tipoVaga: empresaTipoVaga,
+                    linguagens: linguagensSelecionadas,
+                    multinacional: isMultinacional,
+                };
+
+               
+
+                // Limpa os campos de entrada
+                empresaNomeInput.value = "";
+                empresaTipoVagaInput.value = "";
+                lJavaInput.checked = false;
+                lPythonInput.checked = false;
+                lJsInput.checked = false;
+
+                // Armazena a empresa no localStorage
+                const empresas = JSON.parse(localStorage.getItem("empresas")) || [];
+                empresas.push(dadosEmpresa);
+                localStorage.setItem("empresas", JSON.stringify(empresas));
+
+                // Redireciona para a página "home" (index.html)
+                window.location.href = "home.html";
+        });
+    </script>
+</body>
+</html>

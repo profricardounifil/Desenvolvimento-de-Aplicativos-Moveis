@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas Cadastradas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Empresas Cadastradas</h1>
+        <ul id="empresa-list">
+            <!-- As empresas cadastradas serão exibidas aqui dinamicamente -->
+        </ul>
+        <a href="home.html"><button>Voltar</button></a>
+    </div>
+    <script>        
+        /*const companyList = document.getElementById("company-list");
+
+        // Obtenha a lista de empresas do localStorage
+        const companies = JSON.parse(localStorage.getItem("companies")) || [];
+
+        // Exiba as empresas na lista
+        companies.forEach(function (companyName) {
+            const listItem = document.createElement("li");
+            listItem.textContent = companyName;
+            companyList.appendChild(listItem);
+        });*/
+
+        const empresaList = document.getElementById("empresa-list");
+
+        // Obtenha a lista de empresas do localStorage
+        const empresas = JSON.parse(localStorage.getItem("empresas")) || [];
+
+        // Exiba as empresas na lista
+        empresas.forEach(function (dadosEmpresa) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `Nome da Empresa: ${dadosEmpresa.nome}, Novo Campo: ${dadosEmpresa.tipoVaga}, Linguagens: ${dadosEmpresa.linguagens.join(", ")}, Multinacional: ${dadosEmpresa.multinacional}`;
+            empresaList.appendChild(listItem);
+        });
+    </script>
+    </script>
+</body>
+</html>
